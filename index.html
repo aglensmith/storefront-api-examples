@@ -169,7 +169,6 @@
             return fetch(graphQLUrl, {
               method: 'POST',
               credentials: 'include',
-              mode: 'cors',
               headers: { 'Content-Type': 'application/json'},//
                        // 'Authorization': `Bearer ${params.token}`},
               body: JSON.stringify({ query: graphQLQuery}),
