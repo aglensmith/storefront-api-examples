@@ -8,7 +8,7 @@
         <title>Static Site GraphQL Storefront API Example</title>
         <link rel="shortcut icon" href="https://www.bigcommerce.com/assets/images/favicons/favicon.ico">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="dns-prefetch preconnect" href="https://buybutton.store" crossorigin>
+        <link rel="dns-prefetch preconnect" href="https://austins.shop" crossorigin>
     </head>
     <body>
       <div class="container-fluid">
@@ -25,7 +25,7 @@
           <form method="get" id="form">
             <div class="form-group">
               <label>Store URL</label>
-              <input id="store-url-field" type="text" class="form-control" placeholder="Enter Store URL" name="store_url" value="https://buybutton.store">
+              <input id="store-url-field" type="text" class="form-control" placeholder="Enter Store URL" name="store_url" value="https://austins.shop">
               <small class="form-text text-muted">Enter the URL of your store's storefront - this will be used to run GraphQL requests against the right store. Use the HTTPS version.</small>
             </div>
             <div class="form-group">
@@ -170,8 +170,8 @@
               method: 'POST',
               credentials: 'include',
               mode: 'cors',
-              headers: { 'Content-Type': 'application/json',
-                       'Authorization': `Bearer ${params.token}`},
+              headers: { 'Content-Type': 'application/json'},//
+                       // 'Authorization': `Bearer ${params.token}`},
               body: JSON.stringify({ query: graphQLQuery}),
             })
             .then(res => res.json())
@@ -180,7 +180,7 @@
 
         // Set up default params
         let params = {
-            store_url: null,
+            store_url: 'https://store-h10wocxy6s-1283051.mybigcommerce.com/',
             product_ids: null,
             token: null
         };
@@ -193,7 +193,8 @@
         });
 
         // Check for required parameters, throw an error if they're not found
-        if (!(params.store_url && params.token)) {
+        //if (!(params.store_url && params.token)) {
+        if (!(params.store_url)) {
             throw new Error('At least one of the required URL parameters (Store URL, Token) was not supplied or was invalid');
         } else {
             // Put the supplied parameters into the form so it can easily re-submitted
