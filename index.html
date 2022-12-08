@@ -169,8 +169,8 @@
             return fetch(graphQLUrl, {
               method: 'POST',
               credentials: 'include',
-              headers: { 'Content-Type': 'application/json'},//
-                       // 'Authorization': `Bearer ${params.token}`},
+              headers: { 'Content-Type': 'application/json',
+                         'Authorization': `Bearer ${params.token}`},
               body: JSON.stringify({ query: graphQLQuery}),
             })
             .then(res => res.json())
@@ -181,7 +181,7 @@
         let params = {
             store_url: 'https://store-h10wocxy6s-1283051.mybigcommerce.com/',
             product_ids: null,
-            token: "eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiJ9.eyJjaWQiOjEyODMwNTEsImNvcnMiOlsiaHR0cHM6Ly9hdXN0aW5zLnNob3AiXSwiZWF0IjoxODg1NjM1MTc2LCJpYXQiOjE2NzA0NjU0NzksImlzcyI6IkJDIiwic2lkIjoxMDAwNTEzNzE5LCJzdWIiOiJqaWJqcWhsYnp6aHZxN3Y1ZWtpejN0cHJocm83NTRzIiwic3ViX3R5cGUiOjIsInRva2VuX3R5cGUiOjF9.a_qN0pTRT1W0Dnmyh1ztqiyOrJvE3-voKKzeXmiGT7GzKTFp6HWANphn-UsWqoaRvWXTIOTdizHcnnWWTFtkxA"
+            token: "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiJ9.eyJjaWQiOjEyODMwNTEsImNvcnMiOlsiaHR0cHM6Ly9hdXN0aW5zLnNob3AiXSwiZWF0IjoxODg1NjM1MTc2LCJpYXQiOjE2NzA0NjU0NzksImlzcyI6IkJDIiwic2lkIjoxMDAwNTEzNzE5LCJzdWIiOiJqaWJqcWhsYnp6aHZxN3Y1ZWtpejN0cHJocm83NTRzIiwic3ViX3R5cGUiOjIsInRva2VuX3R5cGUiOjF9.a_qN0pTRT1W0Dnmyh1ztqiyOrJvE3-voKKzeXmiGT7GzKTFp6HWANphn-UsWqoaRvWXTIOTdizHcnnWWTFtkxA"
         };
 
         // Fill in supplied URL params
